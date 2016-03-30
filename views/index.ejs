@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+	<form action="/create" method="post">
+		<strong>Title</strong><br/>
+		<input type="text" name="title"/><br/>
+		<strong>Content</strong><br/>
+		<textarea rows="4" cols="50" name="content"></textarea><br/>
+		<input type="submit" value="Submit"/>
+	</form>
+    <hr/>
+    <!-- <p>Welcome to <%= title %></p> -->
+    <% msgs.forEach(function(msg){ %>
+	<div>
+		<strong><%= msg.title %></strong> ( <a href="/destory/<%= msg._id %>">Delete</a> )
+		<p><%= msg.content %></p>		
+	</div>
+    <% }); %>
+  </body>
+</html>
+
